@@ -1,0 +1,19 @@
+# Use this under Windows with command "nmake /f NMakefile"
+
+CFLAGS=/Ox 
+LDADD=
+
+infimnist: main.obj infimnist.obj
+	$(CC) $(CFLAGS) infimnist.obj main.obj $(LDADD)
+
+infimnist.obj: infimnist.c infimnist.h
+	$(CC) $(CFLAGS) /c infimnist.c
+
+main.obj: main.c infimnist.h
+	$(CC) $(CFLAGS) /c main.c
+
+clean: FORCE
+	-del main.obj infimnist.obj 
+	-del infimnist.exe
+
+FORCE:
