@@ -122,11 +122,11 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
     data_sets.test = DataSet([], [], fake_data=True)
     return data_sets
 
-  TRAIN_IMAGES = './mnist800k-patterns-idx3-ubyte.gz'
-  TRAIN_LABELS = './mnist800k-labels-idx1-ubyte.gz'
-
-  TEST_IMAGES = './mnist10k-patterns-idx3-ubyte.gz'
-  TEST_LABELS = './mnist10k-labels-idx1-ubyte.gz'
+  TRAIN_IMAGES = './infimnist-patterns-idx3-ubyte.gz'
+  TRAIN_LABELS = './infimnist-labels-idx1-ubyte.gz'
+  
+  TEST_IMAGES = './test10k-patterns.gz'
+  TEST_LABELS = './test10k-labels.gz'
   
   VALIDATION_SIZE = 5000
   train_images = extract_images(TRAIN_IMAGES)
