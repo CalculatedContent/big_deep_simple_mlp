@@ -121,18 +121,19 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
     data_sets.validation = DataSet([], [], fake_data=True)
     data_sets.test = DataSet([], [], fake_data=True)
     return data_sets
-
-  TRAIN_IMAGES = './infimnist-patterns-idx3-ubyte.gz'
-  TRAIN_LABELS = './infimnist-labels-idx1-ubyte.gz'
-  
-  TEST_IMAGES = './test10k-patterns.gz'
-  TEST_LABELS = './test10k-labels.gz'
-  
+  TRAIN_IMAGES = 'mnist-images.gz'
+  TRAIN_LABELS = 'mnist-labels.gz'
+  TEST_IMAGES = 't10k-images.gz'
+  TEST_LABELS = 't10k-labels.gz'
   VALIDATION_SIZE = 5000
-  train_images = extract_images(TRAIN_IMAGES)
-  train_labels = extract_labels(TRAIN_LABELS, one_hot=one_hot)
-  test_images = extract_images(TEST_IMAGES)
-  test_labels = extract_labels(TEST_LABELS, one_hot=one_hot)
+  local_file = maybe_download(TRAIN_IMAGES, train_dir)
+  train_images = extract_images(local_file)
+  local_file = maybe_download(TRAIN_LABELS, train_dir)
+  train_labels = extract_labels(local_file, one_hot=one_hot)
+  local_file = maybe_download(TEST_IMAGES, train_dir)
+  test_images = extract_images(local_file)
+  local_file = maybe_download(TEST_LABELS, train_dir)
+  test_labels = extract_labels(local_file, one_hot=one_hot)
   validation_images = train_images[:VALIDATION_SIZE]
   validation_labels = train_labels[:VALIDATION_SIZE]
   train_images = train_images[VALIDATION_SIZE:]
@@ -141,4 +142,3 @@ def read_data_sets(train_dir, fake_data=False, one_hot=False):
   data_sets.validation = DataSet(validation_images, validation_labels)
   data_sets.test = DataSet(test_images, test_labels)
   return data_sets
-
