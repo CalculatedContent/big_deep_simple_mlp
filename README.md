@@ -3,26 +3,28 @@ Attempt to use TensorFlow to reproduce the Big, Deep, Simple MLP
 
 http://arxiv.org/pdf/1003.0358.pdf
 
+We will use 2 different data augementation methods
 
-Using infinimist to generate the data
+- InfiMNIST
 
 http://leon.bottou.org/projects/infimnist
 
-<pre>
-cd infimnist
-./infimnist pat 10000 8109999 > mnist8m-patterns-idx3-ubyte
-./infimnist lab 10000 8109999 > mnist8m-labels-idx1-ubyte
+Install infimnist and set the path in infimnist.py  
 
-./infimnist pat 10000 810999 > mnist800k-patterns-idx3-ubyte
-./infimnist lab 10000 810999 > mnist800k-labels-idx1-ubyte
+- AlignMNIST
 
-./infimnist pat  0 9999 > mnist10k-patterns-idx3-ubyte
-./infimnist lab 0 9999 > mnist10k-labels-idx1-ubyte
+http://www2.compute.dtu.dk/~sohau/augmentations/
 
-gzip mnist*
-mv mnist*gz ..
-cd ..
-</pre>
+Download alignmnist.npz	
+
+Test with
+
+AlignMNIST-test.ipynb
+
+
+
+
+
 
 
 
