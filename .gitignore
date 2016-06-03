@@ -1,1 +1,5 @@
 *.pyc
+*.gz
+.ipynb_checkpoints/*
+logs
+\#*

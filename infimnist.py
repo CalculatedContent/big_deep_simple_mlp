@@ -1,6 +1,6 @@
 import os
 from subprocess import Popen
-INFIMNIST = '/Users/charlesmartin14/packages/infimnist/infimnist -d /Users/charlesmartin14/packages/infimnist/data '
+INFIMNIST = '/Users/charlesmartin/packages/infimnist/infimnist -d /Users/charlesmartin/packages/infimnist/data '
 
 class InfiMNIST(object):
 
