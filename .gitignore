@@ -1,6 +1,7 @@
 *.pyc
 *.gz
 *.npz
+*~
 .ipynb_checkpoints/*
 logs
 \#*
