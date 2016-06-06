@@ -23,10 +23,9 @@ http://www2.compute.dtu.dk/~sohau/augmentations/
 
  Download alignmnist.npz	
 
-### Test with
+ Test with
 
-AlignMNIST-test.ipynb
-
+ - AlignMNIST-test.ipynb
 
 
 ### Run these notebooks next
@@ -34,7 +33,7 @@ AlignMNIST-test.ipynb
 
   run this notebook first to create and test augmentmnist.py
 
-then
+  then
 
 - 2-Layer-MLP-AlignMNiST.ipynb
 
