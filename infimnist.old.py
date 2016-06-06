@@ -1,42 +1,40 @@
 import os
-import numpy as np
-import logging
 from subprocess import Popen
-
-
-log = logging.getLogger("infimnist")
-
+INFIMNIST = '/Users/charlesmartin14/packages/infimnist/infimnist -d /Users/charlesmartin14/packages/infimnist/data '
 
 class InfiMNIST(object):
-    '''
-    The infinite MNIST dataset (formerly known as MNIST8M) [1, 2]
-    http://leon.bottou.org/projects/infimnist
 
-    References:
-    [1]: Loosli, Gaelle, Stephane Canu, and Leon Bottou. "Training invariant
-         support vector machines using selective sampling." Large scale kernel
-         machines (2007): 301-320.
-    [2]: Simard, Patrice, et al. "Tangent prop - a formalism for specifying
-         selected invariances in an adaptive network." Advances in neural
-         information processing systems. 1992.
-    '''
-
-    def __init__(self):
-        self.data_dir = "."
-        self._infimnist_start = 10000
-        self._infimnist_stop = 0
-
-
-    def next_epoch(self):
-        log.info('next epoch')
-        self._infimnist_start = self._infimnist_start + 50000
-        self._infimnist_stop =  self._infimnist_start + 50000
-        lab_file = os.path.join(self.data_dir, 'infimnist-labels-idx1-ubyte')
-        pat_file = os.path.join(self.data_dir, 'infimnist-patterns-idx3-ubyte')
-        with open(lab_file, 'wb') as out:
-            Popen(['./infimnist', 'lab', str(self._infimnist_start),
-                str(self._infimnist_stop)], stdout=out, cwd=self.data_dir).wait()
-        with open(pat_file, 'wb') as out:
-            Popen(['./infimnist', 'pat', str(self._infimnist_start),
-                str(self._infimnist_stop)], stdout=out, cwd=self.data_dir).wait()
-
+	def __init__(self):
+	        self.data_dir = "."
+	        self._infimnist_start = 10000
+	        self._infimnist_stop =  self._infimnist_start + 59999
+	        
+        def next_epoch(self):
+               #print "creating infimnist pat files %d - %d" % (self._infimnist_start, self._infimnist_stop)
+                lab_file = os.path.join(self.data_dir, 'infimnist-labels')
+                pat_file = os.path.join(self.data_dir, 'infimnist-images')
+	                
+                # execute cmd
+	                
+                with open(lab_file, 'wb') as out:
+                        cmd = "{} lab {} {} ".format(INFIMNIST, self._infimnist_start, self._infimnist_stop)
+                        #print cmd
+                        Popen(cmd, shell=True, stdout=out, cwd=self.data_dir).wait()
+	                        
+                with open(pat_file, 'wb') as out:
+                        cmd = "{} pat {} {} ".format(INFIMNIST, self._infimnist_start, self._infimnist_stop)
+                        #print cmd
+	                Popen(cmd, shell=True, stdout=out, cwd=self.data_dir).wait()
+                                
+                cmd1 = "rm infimnist-labels.gz infimnist-images.gz mnist-labels.gz mnist-images.gz"
+                cmd2 = "gzip -f infimnist-labels infimnist-images"
+                cmd3 = "ln -s infimnist-labels.gz  mnist-labels.gz"
+                cmd4 = "ln -s infimnist-images.gz  mnist-images.gz"
+	                                
+                os.system(cmd1)
+                os.system(cmd2)
+                os.system(cmd3)
+                os.system(cmd4)
+	                                
+                self._infimnist_start = self._infimnist_stop + 1
+                self._infimnist_stop =  self._infimnist_start + 59999
