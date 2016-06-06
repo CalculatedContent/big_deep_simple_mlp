@@ -29,11 +29,12 @@ We will use 2 different data augementation methods
 
 
 ### Run these notebooks next
+
+run this notebook first to create and test augmentmnist.py
+
 - AugmentMNIST.ipynb
 
-  run this notebook first to create and test augmentmnist.py
-
-  then
+then
 
 - 2-Layer-MLP-AlignMNiST.ipynb
 
