@@ -30,7 +30,11 @@ run this notebook first to create and test
 augmentmnist.py
 
 
+- Run these notebooks first
 
+2-Layer-MLP-AlignMNiST.ipynb
+
+2-Layer-MLP-InfiMNiST.ipynb  
 
 
 
