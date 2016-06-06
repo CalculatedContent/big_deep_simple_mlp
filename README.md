@@ -23,6 +23,14 @@ Test with
 
 AlignMNIST-test.ipynb
 
+- AugmentMNIST.ipynb
+
+run this notebook first to create and test
+
+augmentmnist.py
+
+
+
 
 
 
