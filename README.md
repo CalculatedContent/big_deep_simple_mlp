@@ -13,6 +13,8 @@ Install infimnist and set the path in infimnist.py
 
 - AlignMNIST
 
+http://people.csail.mit.edu/freifeld/cpab/poster_ICCV2015.pdf
+`
 http://www2.compute.dtu.dk/~sohau/augmentations/
 
 Download alignmnist.npz	
