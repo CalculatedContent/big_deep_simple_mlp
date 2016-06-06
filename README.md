@@ -9,32 +9,32 @@ http://arxiv.org/pdf/1003.0358.pdf
 
 We will use 2 different data augementation methods
 
-- InfiMNIST
+#### InfiMNIST
 
 http://leon.bottou.org/projects/infimnist
 
-Install infimnist and set the path in infimnist.py  
+ Install infimnist and set the path in infimnist.py  
 
-- AlignMNIST
+#### AlignMNIST
 
 http://people.csail.mit.edu/freifeld/cpab/poster_ICCV2015.pdf
-`
+
 http://www2.compute.dtu.dk/~sohau/augmentations/
 
-Download alignmnist.npz	
+ Download alignmnist.npz	
 
 ### Test with
 
 AlignMNIST-test.ipynb
 
-- AugmentMNIST.ipynb
-
-run this notebook first to create and test
-
-augmentmnist.py
 
 
 ### Run these notebooks next
+- AugmentMNIST.ipynb
+
+  run this notebook first to create and test augmentmnist.py
+
+then
 
 - 2-Layer-MLP-AlignMNiST.ipynb
 
