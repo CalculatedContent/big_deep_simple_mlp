@@ -11,15 +11,15 @@ We will use 2 different data augementation methods
 
 #### InfiMNIST
 
-http://leon.bottou.org/projects/infimnist
+ http://leon.bottou.org/projects/infimnist
 
  Install infimnist and set the path in infimnist.py  
 
 #### AlignMNIST
 
-http://people.csail.mit.edu/freifeld/cpab/poster_ICCV2015.pdf
+ http://people.csail.mit.edu/freifeld/cpab/poster_ICCV2015.pdf
 
-http://www2.compute.dtu.dk/~sohau/augmentations/
+ http://www2.compute.dtu.dk/~sohau/augmentations/
 
  Download alignmnist.npz	
 
