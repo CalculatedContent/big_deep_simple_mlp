@@ -1,7 +1,7 @@
 # big_deep_simple_mlp
 
 
-Attempt to use TensorFlow to reproduce the Big, Deep, Simple MLP 
+This is an attempt to use TensorFlow to reproduce the Big, Deep, Simple MLP 
 
 http://arxiv.org/pdf/1003.0358.pdf
 
@@ -41,6 +41,17 @@ then
 - 2-Layer-MLP-InfiMNiST.ipynb  
 
 
+### Results so far:
+
+I have run 75 epochs of AlignMNIST using RMSProp for a 2 layer and 5 layer MLP
+
+the resulting accuracies are much lower than reported in the paper
+
+https://github.com/CalculatedContent/big_deep_simple_mlp/blob/master/2-Layer-MLP-AlignMNiST.ipynb
+
+https://github.com/CalculatedContent/big_deep_simple_mlp/blob/master/5-Layer-MLP-AlignMNiST.ipynb
+
+I am currently running 500 and 10,000 epochs of RMSProp using the InfiMNIST dataset now
 
 
 
