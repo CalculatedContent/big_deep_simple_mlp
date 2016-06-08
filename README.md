@@ -62,10 +62,11 @@ https://github.com/CalculatedContent/big_deep_simple_mlp/blob/master/2-Layer-MLP
 
 https://github.com/CalculatedContent/big_deep_simple_mlp/blob/master/5-Layer-MLP-AlignMNiST.ipynb
 
-I am currently running 500 and 10,000 epochs of RMSProp using the InfiMNIST dataset now
+https://github.com/CalculatedContent/big_deep_simple_mlp/blob/master/2-Layer-MLP-InfiMNiST.ipynb
 
 
 
+The initial result suggest that having a very good augmentation scheme matters, as the AlignMNIST data is much more generalizable than the InfiMNIST data. Although one has to be careful to look for information leakage, and it would be good to double check that the AlignMNIST does not actually include deformations of the test data.
 
 
 
