@@ -5,6 +5,10 @@ This is an attempt to use TensorFlow to reproduce the Big, Deep, Simple MLP
 
 http://arxiv.org/pdf/1003.0358.pdf
 
+The idea is simple. They claim to get state-of-the-art accuarcy on MNIST using a 5-layer MLP, but running a large number of epochs with just SGD, a decaying learnng rate, and an augmented data set,  The augmented data set can provide, in practice, an infinite amount of training data.
+
+I am trying to repeat this experiment using Tensorflow and 2 kinds of augmented data sets
+
 ### Requirements
 
 We will use 2 different data augementation methods
