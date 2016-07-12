@@ -355,7 +355,22 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \[
-o_{c}(\mathbf{x})=ReLu(\mathbf{W}_{c}^{ok}\mathbf{k(x))}
+o_{c}(\mathbf{x})=\mathbf{W}_{c}^{ok}\mathbf{k(x)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We may be able to simplify k(x)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k(\mathbf{x})=ln(1+\exp(\mathbf{W}^{kh}\mathbf{h}(\mathbf{x})))
 \]
 
 \end_inset
@@ -366,7 +381,7 @@ o_{c}(\mathbf{x})=ReLu(\mathbf{W}_{c}^{ok}\mathbf{k(x))}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-o_{c}(\mathbf{x})=ln(1+\exp(\mathbf{W}_{c}^{ok}\mathbf{k}(\mathbf{x})))
+k(\mathbf{x})=ln(1+\exp(\sum_{j=1}^{N_{h}}W^{kh}h(\mathbf{\mathbf{x}})))
 \]
 
 \end_inset
@@ -377,18 +392,7 @@ o_{c}(\mathbf{x})=ln(1+\exp(\mathbf{W}_{c}^{ok}\mathbf{k}(\mathbf{x})))
 \begin_layout Standard
 \begin_inset Formula 
 \[
-o_{c}(\mathbf{x})=ln(1+\exp(\sum_{j=1}^{N_{k}}W_{cj}^{ok}k_{j}(\mathbf{\mathbf{x}})))
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-o_{c}(\mathbf{x})=ln(1+\prod_{j=1}^{N_{k}}\exp(W_{cj}^{ok}k_{j}(\mathbf{\mathbf{x}})))
+k(\mathbf{x})=ln(1+\prod_{j=1}^{N_{h}}\exp(W_{j}^{kh}h_{j}(\mathbf{\mathbf{x}})))
 \]
 
 \end_inset
@@ -415,7 +419,7 @@ that is, if we could get an expression like
 \begin_layout Standard
 \begin_inset Formula 
 \[
-o_{c}(\mathbf{x})\thickapprox ln(\prod_{j=1}^{N_{k}}\exp(X_{cj}k_{j}(\mathbf{\mathbf{x}})))
+k(\mathbf{x})\thickapprox ln(\prod_{j=1}^{N_{_{h}}}\exp(X_{cj}h_{j}(\mathbf{\mathbf{x}})))
 \]
 
 \end_inset
@@ -430,7 +434,7 @@ so that we can write each node as a sum of terms
 \begin_layout Standard
 \begin_inset Formula 
 \[
-o_{c}(\mathbf{x})\thickapprox\sum_{j=1}^{N_{k}}X_{cj}k_{j}(\mathbf{\mathbf{x}})
+k(\mathbf{x})\thickapprox\sum_{j=1}^{N_{k}}X_{cj}h_{j}(\mathbf{\mathbf{x}})
 \]
 
 \end_inset
